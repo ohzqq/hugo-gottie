@@ -1,0 +1,20 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'dotLottie anims'
+
+[params.gottie]
+AutoResize = true
+AspectRatio = "16/9"
+Controls = true
+Fit = "contain"
+Align = "0.5 0.5"
+Autoplay = true
+Loop = true
+Mode = "bounce"
+Speed = 0.5
+BackgroundColor = "#444444"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
