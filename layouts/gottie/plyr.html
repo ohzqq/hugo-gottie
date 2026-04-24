@@ -1,17 +1,14 @@
-{{define "player"}}
-<script src="{{.AssetDir}}/gottie/gottie-player.js" type ="module"></script>
-<gottie-player id="{{.ID}}" 
-						 {{- with .AutoResize}} auto-resize {{end -}}
-						 {{with .AspectRatio}} aspect-ratio="{{.}}" {{end -}}
-						 {{with .Controls}} controls {{end -}}
-						 {{with .Fit}} fit="{{.}}" {{end -}}
-						 {{with .Align}} align="{{.}}" {{end -}}
-						 active-theme-id="{{.AssetDir}}/gottie/gottie.css" 
+{{define "main"}}
+<script src="/gottie/gottie-player.js" type ="module"></script>
+<gottie-player id="{{.Title}}" 
+						 {{- with .Params.AutoResize}} auto-resize {{end -}}
+						 {{with .Params.AspectRatio}} aspect-ratio="{{.}}" {{end -}}
+						 {{with .Params.Controls}} controls {{end -}}
+						 {{with .Params.Fit}} fit="{{.}}" {{end -}}
+						 {{with .Params.Align}} align="{{.}}" {{end -}}
+						 active-theme-id="/gottie/gottie.css" 
 						 class="gottie-player"
-						 {{- template "attributes" . }} >
-	{{range .Anims -}}
-		{{template "anim" .}}
-	{{end -}}
+						 {{- partial "attr.html" . }} >
 	</gottie-player>
 	<template id="gottie-anim-tmpl"> 
 	<gottie-anim> </gottie-anim>

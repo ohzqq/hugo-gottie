@@ -1,0 +1,3 @@
+[submodule "themes/picocss"]
+	path = themes/picocss
+	url = https://github.com/ohzqq/hugo-picocss
