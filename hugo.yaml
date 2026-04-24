@@ -1,3 +1,12 @@
 baseURL: 'https://example.org/'
 languageCode: 'en-us'
 title: 'My New Hugo Project'
+
+theme:
+  - picocss
+  
+params:
+  picocss:
+    layout: container-fluid
+    breadcrumbs: true
+    color: amber
