@@ -9,6 +9,9 @@
 						 active-theme-id="/gottie/gottie.css" 
 						 class="gottie-player"
 						 {{- partial "attr.html" . }} >
+    {{range .Resources.ByType "page"}}
+    {{.Content}}
+    {{end}}
 	</gottie-player>
 	<template id="gottie-anim-tmpl"> 
 	<gottie-anim> </gottie-anim>
