@@ -1,2 +1,7 @@
 # hugo-gottie
-hugo site for dotLottie anims
+
+## install
+
+$ git submodule add --depth=1 https://github.com/ohzqq/hugo-gottie themes/gottie
+
+$ git submodule update --init --recursive 
