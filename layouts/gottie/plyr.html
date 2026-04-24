@@ -1,14 +1,19 @@
 {{define "main"}}
 <script src="/gottie/gottie-player.js" type ="module"></script>
 <gottie-player id="{{.Title}}" 
-						 {{- with .Params.AutoResize}} auto-resize {{end -}}
-						 {{with .Params.AspectRatio}} aspect-ratio="{{.}}" {{end -}}
-						 {{with .Params.Controls}} controls {{end -}}
-						 {{with .Params.Fit}} fit="{{.}}" {{end -}}
-						 {{with .Params.Align}} align="{{.}}" {{end -}}
+						 {{- with .Site.Params.gottie.AutoResize}} auto-resize {{end -}}
+						 {{with .Site.Params.gottie.AspectRatio}} aspect-ratio="{{.}}" {{end -}}
+						 {{with .Site.Params.gottie.Controls}} controls {{end -}}
+						 {{with .Site.Params.gottie.Fit}} fit="{{.}}" {{end -}}
+						 {{with .Site.Params.gottie.Align}} align="{{.}}" {{end -}}
 						 active-theme-id="/gottie/gottie.css" 
-						 class="gottie-player"
-						 {{- partial "attr.html" . }} >
+{{- with .Site.Params.gottie.Autoplay}} autoplay {{end -}}
+{{- with .Site.Params.gottie.Loop}}loop {{end -}}
+{{- with .Site.Params.gottie.BackgroundColor}}background-color="{{.}}" {{end -}}
+{{- with .Site.Params.gottie.Speed}}speed="{{.}}" {{end -}}
+{{- with .Site.Params.gottie.Frame}}frame="{{.}}" {{end -}}
+{{- with .Site.Params.gottie.Mode}}mode="{{.}}" {{end -}}
+             class="gottie-player">
     {{range .Resources.ByType "page"}}
     {{.Content}}
     {{end}}
