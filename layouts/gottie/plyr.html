@@ -1,12 +1,12 @@
 {{define "main"}}
-<script src="{{.AssetDir}}/gottie/gottie-player.js" type ="module"></script>
+<script src="/gottie/gottie-player.js" type ="module"></script>
 <gottie-player id="{{.Title}}" 
 						 {{- with .Site.Params.gottie.AutoResize}} auto-resize {{end -}}
 						 {{with .Site.Params.gottie.AspectRatio}} aspect-ratio="{{.}}" {{end -}}
 						 {{with .Site.Params.gottie.Controls}} controls {{end -}}
 						 {{with .Site.Params.gottie.Fit}} fit="{{.}}" {{end -}}
 						 {{with .Site.Params.gottie.Align}} align="{{.}}" {{end -}}
-             player-style="{{.AssetDir}}/gottie/gottie.css" 
+             player-style="/gottie/gottie.css" 
 {{- with .Site.Params.gottie.Autoplay}} autoplay {{end -}}
 {{- with .Site.Params.gottie.Loop}}loop {{end -}}
 {{- with .Site.Params.gottie.BackgroundColor}}background-color="{{.}}" {{end -}}
