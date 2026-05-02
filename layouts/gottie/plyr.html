@@ -1,12 +1,12 @@
 {{define "main"}}
-<script src="/gottie/gottie-player.js" type ="module"></script>
+<script src="{{.AssetDir}}/gottie/gottie-player.js" type ="module"></script>
 <gottie-player id="{{.Title}}" 
 						 {{- with .Site.Params.gottie.AutoResize}} auto-resize {{end -}}
 						 {{with .Site.Params.gottie.AspectRatio}} aspect-ratio="{{.}}" {{end -}}
 						 {{with .Site.Params.gottie.Controls}} controls {{end -}}
 						 {{with .Site.Params.gottie.Fit}} fit="{{.}}" {{end -}}
 						 {{with .Site.Params.gottie.Align}} align="{{.}}" {{end -}}
-						 active-theme-id="/gottie/gottie.css" 
+             player-style="{{.AssetDir}}/gottie/gottie.css" 
 {{- with .Site.Params.gottie.Autoplay}} autoplay {{end -}}
 {{- with .Site.Params.gottie.Loop}}loop {{end -}}
 {{- with .Site.Params.gottie.BackgroundColor}}background-color="{{.}}" {{end -}}
@@ -18,59 +18,4 @@
     {{.Content}}
     {{end}}
 	</gottie-player>
-	<template id="gottie-anim-tmpl"> 
-	<gottie-anim> </gottie-anim>
-	</template>
-<template id="gottie-player-template">
-	<template id="canvas-slot">
-		<div class="gottie-player-canvas" slot="canvas" style="">
-			<canvas class="gottie-canvas" style="width: 100%; height: 100%;"></canvas>
-		</div>
-	</template>
-	<template id="controls-slot">
-		<div class="gottie-controls">
-			<div class="gottie-left-controls">
-				<button class="gottie-control-btn gottie-play-btn" data-state="" title="play"></button>
-				<button class="gottie-control-btn gottie-loop-btn" data-state="loop-on" title="loop"></button>
-			</div>
-			<div class="gottie-middle-controls">
-				<input min="0" class="gottie-timeline-slider" max="" step="1" type="range" value="0"></input>
-			</div>
-			<div class="gottie-right-controls">
-				<span class="gottie-settings">
-					<button class="gottie-control-btn gottie-settings-btn" title="settings"></button>
-					<div class="gottie-settings-menu">
-						<div class="gottie-settings-content">
-							<div role="" class="gottie-mode-selector gottie-settings-item">
-								<div class="gottie-settings-label">mode</div>
-								<div role="group" class="gottie-settings-item-content">
-									<label>
-										<input type="radio" name="mode" class="bounce-radio" value="bounce"></input> bounce </label>
-									<label>
-										<input type="radio" name="mode" class="forward-radio" value="forward"></input> forward </label>
-								</div>
-							</div>
-							<div class="gottie-settings-item" role="">
-								<div class="gottie-settings-label gottie-anim-label">animations</div>
-								<div class="gottie-settings-item-content">
-									<select class="gottie-src-select gottie-settings-selector"></select>
-								</div>
-								<div class="gottie-settings-item-content">
-									<select class="gottie-load-select gottie-settings-selector"></select>
-								</div>
-							</div>
-							<div class="gottie-settings-item" role="">
-								<div class="gottie-settings-label gottie-speed-label"></div>
-								<div class="gottie-settings-item-content">
-									<input min="0.25" class="gottie-speed-slider" max="2" step="0.25" type="range" value=""></input>
-								</div>
-							</div>
-						</div>
-					</div>
-				</span>
-				<button class="gottie-control-btn gottie-fullscreen-btn" data-state="fullscreen-enter"></button>
-			</div>
-		</div>
-	</template>
-</template>
 {{end}}
