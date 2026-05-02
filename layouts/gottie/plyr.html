@@ -15,7 +15,7 @@
 {{- with .Site.Params.gottie.Mode}}mode="{{.}}" {{end -}}
              class="gottie-player">
     {{range .Resources.ByType "page"}}
-    {{ partials "gottie/anim.html" .}}
+    {{.Content}}
     {{end}}
 	</gottie-player>
 {{end}}

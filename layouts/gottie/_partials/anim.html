@@ -1,6 +1,10 @@
-{{define "main"}}
-<gottie-anim id="{{.title}}" 
-             src="{{.RelPermalink}}/{{.Params.Src}}"
-   {{- partial "attributes.html" .Params -}}> 
+<gottie-anim id="{{.Title}}" 
+             src="{{path.Join "/" .RelPermalink  .Src}}"
+{{- with .Autoplay}} autoplay {{end -}}
+{{- with .Loop}}loop {{end -}}
+{{- with .BackgroundColor}}background-color="{{.}}" {{end -}}
+{{- with .AnimationID}}animation-id="{{.}}" {{end -}}
+{{- with .Speed}}speed="{{.}}" {{end -}}
+{{- with .Frame}}frame="{{.}}" {{end -}}
+             {{- with .Mode}}mode="{{.}}" {{end -}}>
 </gottie-anim>
-{{end}}

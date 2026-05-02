@@ -1,6 +1,6 @@
 {{define "main"}}
 <gottie-anim id="{{.title}}" 
              src="{{.RelPermalink}}/{{.Params.Src}}"
-   {{- partial "attributes.html" .Params -}}> 
+   {{- partials "gottie/attr.html" .Params -}}> 
 </gottie-anim>
 {{end}}
